@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --red: #ff7a7a;
+  --green: hsl(154, 59%, 51%);
+  --blue: #6055a5;
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: #b9b6d3;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
+  background: url(./images/bg-intro-desktop.png) no-repeat;
+  background-color: var(--red);
+  background-size: 100%;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5rem;
+  overflow: hidden;
+  min-height: 100vh;
+}
+.wrapper {
+  max-width: 69.375rem;
+}
+.card {
+  display: block;
+  margin: 0 auto;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+.card-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card-heading {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+.card-desc {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #e5e5ef;
+    line-height: 1.2;
+}
+.card-main {
+    max-width: 27.875rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-direction:column;
+}
+.btn-try {
+    width: 100%;
+    font-size: 1rem;
+    background-color: var(--blue);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    padding: 18px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    transition: transform ease-out 0.3s;
+}
+.btn-try span {
+    font-weight: 400;
+    color: #e5e5ef;
+}
+.btn-try:hover {
+    background: linear-gradient(90deg, #4c3ea9 0%, #6a60aa 100%);
+    transform: scale(1.1);
+}
+.form {
+    max-width: 33.375rem;
+    min-height: 100px;
+    padding: 38px 36px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    position: relative;
+}
+.form-control {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--grayish-blue);
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 30px 34px;
+}
+.form-control:hover {
+    border-color: var(--blue);
+    color: var(--dark-blue);
+}
+.form-group.invalid .form-control {
+    border-color: var(--red);
+}
+.form-group.invalid .form-message {
+    color: var(--red);
+}
+.form-group.invalid .form-icon {
+    display: block;
+}
+.form-message {
+    text-align: right;
+    margin-top: 12px;
+    font-size: 12px;
+}
+.btn-send {
+    width: 100%;
+    background-color: var(--green);
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.6em;
+    border: none;
+    border-radius: 5px;
+    padding: 18px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+.btn-send:hover {
+    opacity: 0.8;    
+}
+
+.form-icon {
+    display: none;
+    position: absolute;
+    width: 32px;
+    right: 2.125rem;
+    top: 18%;
+}
+
+.form-desc {
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgb(167, 163, 163);
+}
+.form-desc span {
+    color: var(--red);
+    cursor: pointer;
+}
+.form-desc span:hover {
+    color: #f86363;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px){
+    body {
+        background-image: url(./images/bg-intro-desktop.png);
+        background-size: cover;
+        padding: 0 2rem;
+        overflow: unset;
+    }
+    .card-heading {
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        background-image: url(./images/bg-intro-mobile.png);
+        padding: 96px 0;
+        overflow: unset;
+    }
+    .wrapper,
+    .form {
+        max-width: 330px;
+    }
+    .card-heading {
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-align: center;
+    }
+    .card-desc {
+        text-align: center;
+    }
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .btn-try {
+        padding: 18px 72px;
+        font-size: 1rem;
+        margin-top: 30px;
+    }
+    .form-group {
+        margin-bottom: 8px;
+    }
+    .form-control {
+        padding: 12px 16px;
+        height: 60px;
+    }
+    .form-group.invalid .form-icon {
+        display: none;
+    }
+    .form-group.invalid .form-message {
+        display: none;
+    }
+    .btn-send {
+        padding: 18px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .form-desc {
+        line-height: 1.8;
+    }
+}
+
+
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Intro component with sign up form</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <main class="wrapper">
+      <section class="card">
+        <div class="container">
+          <div class="card-intro">
+            <h1 class="card-heading">Learn to code by watching others</h1>
+            <p class="card-desc">
+              See how experienced developers solve problems in real-time.
+              Watching scripted tutorials is great, but understanding how
+              developers think is invaluable.
+            </p>
+          </div>
+          <div class="card-main">
+            <button class="btn-try">
+              Try it free 7 days <span>then $20/mo. thereafter</span>
+            </button>
+            <form class="form" id="form-1">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="first-name"
+                  id="first-name"
+                  class="form-control"
+                  placeholder="First Name"
+                />
+                <img class="form-icon" src="./images/icon-error.svg" alt="" />
+                <div class="form-message"></div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="last-name"
+                  id="last-name"
+                  class="form-control"
+                  placeholder="Last Name"
+                />
+                <img class="form-icon" src="./images/icon-error.svg" alt="" />
+                <div class="form-message"></div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="Email Address"
+                />
+                <div class="form-message"></div>
+                <img class="form-icon" src="./images/icon-error.svg" alt="" />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="password"
+                  id="password"
+                  class="form-control"
+                  placeholder="Password"
+                />
+                <img class="form-icon" src="./images/icon-error.svg" alt="" />
+                <div class="form-message"></div>
+              </div>
+              <button class="btn-send">Claim your free trial</button>
+              <p class="form-desc">
+                By clicking the button, you are agreeing to our
+                <span> Terms and Services </span>
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+    <script>
+      Validator({
+        form: "#form-1",
+        errorSelector: ".form-message",
+        rules: [
+          Validator.isRequired("#first-name"),
+          Validator.isRequired("#last-name"),
+          Validator.isEmail("#email"),
+          Validator.minLength("#password", 6),
+        ],
+      });
+    </script>
+  </body>
+</html>
